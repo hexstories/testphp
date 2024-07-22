@@ -90,6 +90,15 @@
                     <a href="mailto:kwakuasihene@gmail.com">Mail</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <div class="links">
+                    <h2>PROJECTS</h2>
+                    <p>A collection of my favourite masterpieces.</p>
+                    <hr>
+                    <a class="py-4 border-2 border-gray-200 px-2 text-sm mb-5" href="https://github.com/laravel/laravel">University Counselling Center</a>
+                    <a class="py-4 border-2 border-gray-200 px-2 text-sm" href="https://github.com/laravel/laravel">Dreamosoft</a>
+
+                </div>
             </div>
         </div>
     </body>
