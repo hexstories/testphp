@@ -91,7 +91,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
 
-                <div class="links">
+                <div class=".links">
                     <h2>PROJECTS</h2>
                     <p>A collection of my favourite masterpieces.</p>
                     <hr>
