@@ -102,7 +102,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
 
-                <div class="">
+                <div class="projects">
                     <h2>PROJECTS</h2>
                     <p>A collection of my favourite masterpieces.</p>
                     <hr>
