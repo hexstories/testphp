@@ -61,6 +61,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .projects {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-decoration: none;
+                border-bottom: 1px solid gray;
+                padding: 4px 2px;
+            }
         </style>
     </head>
     <body>
@@ -91,12 +100,12 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
 
-                <div class=".links text-right ">
+                <div class="">
                     <h2>PROJECTS</h2>
                     <p>A collection of my favourite masterpieces.</p>
                     <hr>
-                    <div class="flex flex-col gap-2 ">
-                        <a class="py-4 border-2 border-gray-200 px-2 text-sm mb-5 no-underline" href="https://github.com/laravel/laravel">University Counselling Center</a>
+                    <div class="projects">
+                        <a class="py-4 border-2 border-gray-200 px-2 text-sm mb-5 no-underline" href="https://github.com/laravel/laravel">University Counselling Center</a> 
                         <a class="py-4 border-2 border-gray-200 px-2 text-sm no-underline" href="https://github.com/laravel/laravel">Dreamosoft</a>
                     </div>
 
