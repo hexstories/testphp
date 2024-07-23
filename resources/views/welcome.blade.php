@@ -61,11 +61,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            
+
             .projects {
                 display: flex;
                 flex-direction: column;
-                gap: 5px;
                 border-bottom: 1px solid gray;
                 padding: 4px 2px;
                 justify-content: flex-start;
