@@ -126,7 +126,6 @@ DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_password
 
 
-
 Step 5: Build and run the containers
 Run the following commands in your project root:
  ```shell
