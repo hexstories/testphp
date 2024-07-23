@@ -1,20 +1,46 @@
-FROM richarvey/nginx-php-fpm:3.1.6
+# Use the official PHP image as a base
+FROM php:8.2-fpm
 
+# Install system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    unzip \
+    git \
+    libonig-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libmcrypt-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install mbstring exif pcntl bcmath curl zip
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Set the working directory in the container
+WORKDIR /var/www
+
+# Copy the application code into the container
 COPY . .
 
-# Image config
-ENV SKIP_COMPOSER 1
-ENV WEBROOT /var/www/html/public
-ENV PHP_ERRORS_STDERR 1
-ENV RUN_SCRIPTS 1
-ENV REAL_IP_HEADER 1
+# Install PHP dependencies
+RUN composer install --no-interaction --no-ansi --no-dev --no-scripts --no-progress
 
-# Laravel config
-ENV APP_ENV production
-ENV APP_DEBUG false
-ENV LOG_CHANNEL stderr
+# Copy the .env.example to .env
+RUN cp .env.example .env
 
-# Allow composer to run as root
-ENV COMPOSER_ALLOW_SUPERUSER 1
+# Generate the application key
+RUN php artisan key:generate
 
-CMD ["/start.sh"]
+# Expose the port on which the PHP-FPM server will run
+EXPOSE 9000
+
+# Start PHP-FPM server
+CMD ["php-fpm"]
+
