@@ -1,4 +1,4 @@
-Laravel Docker Development Setup
+Laravel Development Setup
 This repository provides a setup for running a Laravel application with Docker, including a MySQL database.
 
 Prerequisites
